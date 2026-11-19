@@ -188,3 +188,7 @@ The tests run against a fake projector that speaks real ADCP over TCP
 ([`tests/fake_projector.py`](tests/fake_projector.py)). The protocol code in
 [`adcp/`](custom_components/sony_adcp_projector/adcp) has no Home Assistant
 imports, so it can be published to PyPI as its own library.
+
+## License
+
+[MIT](LICENSE)

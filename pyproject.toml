@@ -3,6 +3,7 @@ name = "ha-sony-adcp-projector"
 version = "0.1.0"
 description = "Home Assistant integration for Sony projectors over ADCP (VPL-GTZ380 and others)"
 requires-python = ">=3.14"
+license = "MIT"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
