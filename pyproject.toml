@@ -1,0 +1,28 @@
+[project]
+name = "ha-sony-adcp-projector"
+version = "0.1.0"
+description = "Home Assistant integration for Sony projectors over ADCP (VPL-GTZ380 and others)"
+requires-python = ">=3.14"
+license = "MIT"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["real_sdap: bind a real (ephemeral) UDP socket for SDAP"]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC", "SIM", "RUF", "PL", "TRY"]
+ignore = ["PLR0913", "PLR2004", "TRY003", "PLR0911", "PLR0912", "RUF012", "TRY300"]
+
+[tool.ruff.lint.per-file-ignores]
+"script/*" = ["E501"]
+"tests/*" = ["E501", "PLC0415", "SLF001"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["custom_components"]
+known-third-party = ["homeassistant"]

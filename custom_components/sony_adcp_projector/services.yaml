@@ -1,0 +1,19 @@
+send_command:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: sony_adcp_projector
+    command:
+      required: true
+      example: 'pic_pos_sel "custom2"'
+      selector:
+        text:
+probe_capabilities:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: sony_adcp_projector

@@ -1,0 +1,17 @@
+{
+  "domain": "sony_adcp_projector",
+  "name": "Sony Projector (ADCP)",
+  "codeowners": [
+    "@Alexa-RR"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/Alexa-RR/sony-porjector-new",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/Alexa-RR/sony-porjector-new/issues",
+  "loggers": [
+    "custom_components.sony_adcp_projector.adcp"
+  ],
+  "requirements": [],
+  "version": "0.1.0"
+}
