@@ -167,6 +167,7 @@ FEATURES: tuple[Feature, ...] = (
     _f("hdmi_signal_format", entity_category=_CFG, enabled_default=False),
     _f("test_pattern"),
     _f("settings_lock", entity_category=_CFG, enabled_default=False),
+    _f("setting_lock", entity_category=_CFG, enabled_default=False),  # VPL-GTZ380
     # ---- Setup menu -------------------------------------------------------
     _f("high_alt_mode", entity_category=_CFG, enabled_default=False),
     _f("remote_start", entity_category=_CFG, enabled_default=False),
@@ -181,6 +182,7 @@ FEATURES: tuple[Feature, ...] = (
     _f("anamorphic_lens", entity_category=_CFG),
     _f("trigger", entity_category=_CFG, enabled_default=False),
     _f("ir_receiver", entity_category=_CFG, enabled_default=False),
+    _f("infrared", entity_category=_CFG, enabled_default=False),  # VPL-GTZ380
     _f("lens_lock", entity_category=_CFG, enabled_default=False),
     _f("controlkey_lock", entity_category=_CFG, enabled_default=False),
     _f("panel_alignment", entity_category=_CFG, enabled_default=False),

@@ -47,6 +47,31 @@ Not every row exists on every model. You only get what your projector reports.
 Rarely used configuration entities are **disabled by default**. Enable them from
 the device page.
 
+## Tested hardware
+
+**VPL-GTZ380** (firmware as of November 2026, authentication off). Real probe
+result: 48 supported commands, including
+
+- **Inputs:** `hdmi1`, `hdmi2`, `dp1`, `dp2` and `dp1_2` (DisplayPort 1+2)
+- **Picture:** picture mode (incl. Cinema Digital), Reality Creation and its
+  sliders, laser light output (0-1000), dynamic laser control (off/limited/full),
+  contrast enhancer, Motionflow (incl. Impulse 1-3), contrast, brightness, color,
+  hue, sharpness, NR, color temperature (D93…D55, DCI, Custom 1-5) with gain/bias,
+  gamma (1.8-2.6, Gamma 7-10), HDR (auto, HDR10, HLG, HDR Reference), color
+  space, color correction, input lag reduction
+- **Screen and lens:** aspect (incl. 1.85:1 / 2.35:1 zoom), Picture Position
+  recall (1.85:1, 2.35:1, Custom 1-3), anamorphic lens (1.24x/1.32x)
+- **Function and setup:** 2D/3D, 3D format, test pattern, settings lock,
+  infrared, high altitude, remote start, power saving, menu language and
+  position, status display, image flip, IR receiver, lens lock, panel alignment
+
+Over ADCP the GTZ380 doesn't answer Dynamic HDR Enhancer, Smooth Gradation,
+Picture Position save/delete, Blanking or dynamic range under any name tried.
+Use the projector menu or the IR remote for those. The GTZ380 answers metadata
+queries only in the `command ? --info` form, which the integration handles.
+Picture settings read as *unavailable* while there's no input signal, because
+the projector greys out its picture menu.
+
 ## Projector preparation
 
 On the projector's web page (Setup):
