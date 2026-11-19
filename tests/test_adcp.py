@@ -208,3 +208,32 @@ async def test_sdap_listener_receives_broadcast() -> None:
     assert received[0].serial == "12345"
     assert listener.seen["127.0.0.1"].model == "VPL-GTZ380"
     assert not listener.running
+
+
+def test_source_names() -> None:
+    from custom_components.sony_adcp_projector.media_player import source_name
+
+    assert source_name("hdmi1") == "HDMI 1"
+    assert source_name("dp2") == "DisplayPort 2"
+    # Real VPL-GTZ380 input list: hdmi1, hdmi2, dp1, dp2, dp1_2
+    assert source_name("dp1_2") == "DisplayPort 1+2"
+    assert source_name("weird_input") == "Weird Input"
+
+
+async def test_info_query_form_only() -> None:
+    """The VPL-GTZ380 rejects ``cmd --info`` and only accepts ``cmd ? --info``."""
+    fake = FakeProjector(info_needs_query_form=frozenset({"motionflow", "brightness"}))
+    fake.infos["motionflow"] = {
+        "type": "menu_sel",
+        "version": "1.0",
+        "range": ["off", "smooth_high", "impulse1", "true_cinema"],
+    }
+    await fake.start()
+    client = AdcpClient("127.0.0.1", fake.port)
+    try:
+        info = await client.async_get_info("motionflow")
+        assert info.choices == ("off", "smooth_high", "impulse1", "true_cinema")
+        assert (await client.async_get_info("brightness")).is_number
+    finally:
+        await client.async_close()
+        await fake.stop()

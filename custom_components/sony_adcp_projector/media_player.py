@@ -35,10 +35,16 @@ _SOURCE_NAMES = {
     "option": "Option",
 }
 _SOURCE_RE = re.compile(r"^([a-z_]+?)(\d*)$")
+# Dual-link inputs such as the VPL-GTZ380's "dp1_2" (DisplayPort 1+2).
+_DUAL_RE = re.compile(r"^([a-z]+)(\d+)_(\d+)$")
 
 
 def source_name(raw: str) -> str:
-    """``hdmi1`` -> ``HDMI 1``, ``dp2`` -> ``DisplayPort 2``."""
+    """``hdmi1`` -> ``HDMI 1``, ``dp2`` -> ``DisplayPort 2``, ``dp1_2`` -> ``DisplayPort 1+2``."""
+    if match := _DUAL_RE.match(raw):
+        prefix, first, second = match.groups()
+        if prefix in _SOURCE_NAMES:
+            return f"{_SOURCE_NAMES[prefix]} {first}+{second}"
     if match := _SOURCE_RE.match(raw):
         prefix, number = match.groups()
         if prefix in _SOURCE_NAMES:

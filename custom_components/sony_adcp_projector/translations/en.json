@@ -115,7 +115,7 @@
       "message": "`{command}` is not available right now (check power, input and signal)."
     },
     "command_unsupported": {
-      "message": "This projector does not support `{command}`."
+      "message": "This projector does not support `{command}` ({code})."
     },
     "command_failed": {
       "message": "The projector answered `{code}` to `{command}`."
@@ -390,6 +390,9 @@
       "image_flip": {
         "name": "Image flip"
       },
+      "infrared": {
+        "name": "Infrared remote control"
+      },
       "input_lag_red": {
         "name": "Input lag reduction"
       },
@@ -462,6 +465,9 @@
       "remote_start": {
         "name": "Remote start"
       },
+      "setting_lock": {
+        "name": "Settings lock"
+      },
       "settings_lock": {
         "name": "Settings lock"
       },
@@ -514,7 +520,11 @@
         "name": "3D depth"
       },
       "3d_format": {
-        "name": "3D format"
+        "name": "3D format",
+        "state": {
+          "sidebyside": "Side-by-side",
+          "overunder": "Over-under"
+        }
       },
       "anamorphic_lens": {
         "name": "Anamorphic lens"
@@ -526,6 +536,7 @@
           "squeeze": "Squeeze",
           "stretch": "Stretch",
           "v_stretch": "V Stretch",
+          "h_stretch": "H Stretch",
           "zoom": "Zoom",
           "zoom_1_85": "1.85:1 Zoom",
           "zoom_2_35": "2.35:1 Zoom",
@@ -627,6 +638,7 @@
           "bt709": "BT.709",
           "bt2020": "BT.2020",
           "dci": "DCI",
+          "custom": "Custom",
           "custom1": "Custom 1",
           "custom2": "Custom 2",
           "custom3": "Custom 3",
@@ -643,6 +655,7 @@
           "d75": "D75",
           "d65": "D65",
           "d55": "D55",
+          "dci": "DCI",
           "high": "High",
           "mid": "Middle",
           "low": "Low",
@@ -725,7 +738,20 @@
         "name": "Freeze"
       },
       "gamma_correction": {
-        "name": "Gamma correction"
+        "name": "Gamma correction",
+        "state": {
+          "off": "Off",
+          "gamma1": "Gamma 1",
+          "gamma2": "Gamma 2",
+          "gamma3": "Gamma 3",
+          "gamma4": "Gamma 4",
+          "gamma5": "Gamma 5",
+          "gamma6": "Gamma 6",
+          "gamma7": "Gamma 7",
+          "gamma8": "Gamma 8",
+          "gamma9": "Gamma 9",
+          "gamma10": "Gamma 10"
+        }
       },
       "hdmi_signal_format": {
         "name": "HDMI signal format"
@@ -737,7 +763,8 @@
           "auto": "Auto",
           "hdr10": "HDR10",
           "hlg": "HLG",
-          "hdr_ref": "HDR Reference"
+          "hdr_ref": "HDR Reference",
+          "hdr_reference": "HDR Reference"
         }
       },
       "hdr_contrast": {
@@ -747,7 +774,12 @@
         "name": "HDR dynamic tone mapping"
       },
       "high_alt_mode": {
-        "name": "High altitude mode"
+        "name": "High altitude mode",
+        "state": {
+          "off": "Off",
+          "level1": "Level 1",
+          "level2": "Level 2"
+        }
       },
       "hue": {
         "name": "Hue"
@@ -761,6 +793,9 @@
           "hv": "Horizontal and vertical"
         }
       },
+      "infrared": {
+        "name": "Infrared remote control"
+      },
       "input_lag_red": {
         "name": "Input lag reduction"
       },
@@ -768,7 +803,12 @@
         "name": "Input lag reduction"
       },
       "ir_receiver": {
-        "name": "IR receiver"
+        "name": "IR receiver",
+        "state": {
+          "front_rear": "Front and rear",
+          "front": "Front",
+          "rear": "Rear"
+        }
       },
       "language": {
         "name": "Menu language"
@@ -780,7 +820,12 @@
         "name": "Lens control lock"
       },
       "light_output_dyn": {
-        "name": "Dynamic laser control"
+        "name": "Dynamic laser control",
+        "state": {
+          "off": "Off",
+          "limited": "Limited",
+          "full": "Full"
+        }
       },
       "light_output_mode": {
         "name": "Laser light mode",
@@ -797,7 +842,11 @@
         "name": "Laser light output"
       },
       "menu_pos": {
-        "name": "Menu position"
+        "name": "Menu position",
+        "state": {
+          "bottom_left": "Bottom left",
+          "center": "Center"
+        }
       },
       "motionflow": {
         "name": "Motionflow",
@@ -806,6 +855,9 @@
           "smooth_high": "Smooth High",
           "smooth_low": "Smooth Low",
           "impulse": "Impulse",
+          "impulse1": "Impulse 1",
+          "impulse2": "Impulse 2",
+          "impulse3": "Impulse 3",
           "combination": "Combination",
           "true_cinema": "True Cinema"
         }
@@ -825,6 +877,7 @@
           "off": "Off",
           "auto": "Auto",
           "low": "Low",
+          "mid": "Middle",
           "middle": "Middle",
           "high": "High"
         }
@@ -858,6 +911,7 @@
           "brt_cinema": "Bright Cinema",
           "brt_tv": "Bright TV",
           "imax_enhanced": "IMAX Enhanced",
+          "cinema_digital": "Cinema Digital",
           "user": "User",
           "user1": "User 1",
           "user2": "User 2",
@@ -873,7 +927,11 @@
         }
       },
       "powsave_nosig": {
-        "name": "Power saving"
+        "name": "Power saving",
+        "state": {
+          "off": "Off",
+          "standby": "Standby"
+        }
       },
       "real_cre": {
         "name": "Reality Creation"
@@ -886,6 +944,14 @@
       },
       "remote_start": {
         "name": "Remote start"
+      },
+      "setting_lock": {
+        "name": "Settings lock",
+        "state": {
+          "off": "Off",
+          "level_a": "Level A",
+          "level_b": "Level B"
+        }
       },
       "settings_lock": {
         "name": "Settings lock"
@@ -903,7 +969,12 @@
         "name": "Standby mode"
       },
       "status_disp": {
-        "name": "On-screen status display"
+        "name": "On-screen status display",
+        "state": {
+          "off": "Off",
+          "on": "On",
+          "all_off": "All off"
+        }
       },
       "test_pattern": {
         "name": "Test pattern"
@@ -1102,6 +1173,9 @@
       "image_flip": {
         "name": "Image flip"
       },
+      "infrared": {
+        "name": "Infrared remote control"
+      },
       "input_lag_red": {
         "name": "Input lag reduction"
       },
@@ -1193,6 +1267,9 @@
       },
       "remote_start": {
         "name": "Remote start"
+      },
+      "setting_lock": {
+        "name": "Settings lock"
       },
       "settings_lock": {
         "name": "Settings lock"
@@ -1412,6 +1489,9 @@
       "image_flip": {
         "name": "Image flip"
       },
+      "infrared": {
+        "name": "Infrared remote control"
+      },
       "input_lag_red": {
         "name": "Input lag reduction"
       },
@@ -1483,6 +1563,9 @@
       },
       "remote_start": {
         "name": "Remote start"
+      },
+      "setting_lock": {
+        "name": "Settings lock"
       },
       "settings_lock": {
         "name": "Settings lock"
